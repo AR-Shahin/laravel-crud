@@ -28,6 +28,6 @@ class AdminController extends Controller
     {
 
         $admin->update($request->all());
-        return back();
+        return redirect()->route('admin.index');
     }
 }

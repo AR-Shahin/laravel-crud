@@ -5,7 +5,7 @@
         <div class="card">
             <h2 class="m-3">Admins Edit</h2> <a href="{{ route('admin.index') }}"> Back</a>
             <div class="card-body ">
-                <form action="{{ route('admin.update',$admin->id) }}" method="post">
+                <form action="{{ route('admin.update', $admin->id) }}" method="post">
 
                     @csrf
                     <div class="input-group mb-3">
@@ -52,9 +52,9 @@
                     <div class="my-2">
                         <label for="" class="mx-3">Status : </label>
                         Active
-                        <input type="radio" value="1" @if ($admin->status == 1) checked @endif>
+                        <input type="radio" name="status" value="1" @if ($admin->status == 1) checked @endif>
                         Inactive
-                        <input type="radio" value="0" @if ($admin->status == 0) checked @endif>
+                        <input type="radio" name="status" value=" 0" @if ($admin->status == 0) checked @endif>
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
