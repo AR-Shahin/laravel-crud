@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CrudController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,5 +21,15 @@ Route::prefix('admin')->as('admin.')->middleware(['auth:admin'])->group(function
         Route::get('{crud}', 'show')->name('view');
 
         Route::post('{crud}', 'update')->name('update');
+    });
+
+    # Product
+    Route::prefix('product')->controller(ProductController::class)->name('product.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/edit/{product}', 'edit')->name('edit');
+        Route::post('/delete/{product}', 'delete')->name('delete');
+        Route::post('/update/{product}', 'update')->name('update');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
     });
 });

@@ -84,6 +84,12 @@
                         <p>Admins</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.product.index') }}">
+                        <i class="nav-icon far fa-circle text-warning"></i>
+                        <p>Product</p>
+                    </a>
+                </li>
                 @auth('admin')
                     <li class="nav-item">
                         <form action="{{ route('admin.logout') }}" method="POST">
